@@ -2,4 +2,19 @@
     <string name="app_name">DOCUMENT EDITOR</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="merge_pdf">MERGE PDF</string>
+    <string name="split_pdf">SPLIT PDF</string>
+    <string name="signature">SIGNATURE</string>
+    <string name="watermark">WATERMARK</string>
+    <string name="compress_pdf">COMPRESS PDF</string>
+    <string name="qr_scanner">QR SCANNER</string>
+    <string name="jpg_to_pdf">JPG TO PDF</string>
+    <string name="word_to_pdf">WORD TO PDF</string>
+    <string name="ppt_to_pdf">PPT TO PDF</string>
+    <string name="pdf_to_jpg">PDF TO JPG</string>
+    <string name="pdf_to_word">PDF TO WORD</string>
+    <string name="pdf_to_ppt">PDF TO PPT</string>
+    <string name="files">FILES</string>
+    <string name="home">HOME</string>
+    <string name="camera">CAMERA</string>
 </resources>
