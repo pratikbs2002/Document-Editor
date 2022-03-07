@@ -4,19 +4,19 @@
 
 
     <item
-        android:id="@+id/grade"
+        android:id="@+id/files"
         android:icon="@drawable/file"
-        android:title="FILES">
+        android:title="@string/files">
     </item>
     <item
         android:id="@+id/home"
         android:icon="@drawable/home"
-        android:title="HOME">
+        android:title="@string/home">
     </item>
     <item
-    android:id="@+id/local"
+    android:id="@+id/camera"
     android:icon="@drawable/camera"
-    android:title="CAMERA">
+    android:title="@string/camera">
 </item>
 
 </menu>

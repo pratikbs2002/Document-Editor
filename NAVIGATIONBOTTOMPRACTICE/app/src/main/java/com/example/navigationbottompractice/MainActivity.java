@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,7 +17,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
-Toolbar toolbar;
+    Toolbar toolbar;
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,31 +34,21 @@ Toolbar toolbar;
         bottomNavigationView.setOnItemSelectedListener(item -> {
             FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
             switch (item.getItemId()){
-
                 case R.id.home:
                     transaction1.replace(R.id.container,new homefragment());
                     break;
 
-                case R.id.grade:
+                case R.id.files:
                     transaction1.replace(R.id.container,new filesfragment());
                     break;
 
-
-
-
-                case R.id.local:
+                case R.id.camera:
                     transaction1.replace(R.id.container,new camerafragment());
                     break;
-
             }
-
             transaction1.commit();
             return true;
-
-
         });
-
-
     }
 
 
