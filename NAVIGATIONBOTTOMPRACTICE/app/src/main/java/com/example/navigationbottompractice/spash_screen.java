@@ -15,7 +15,7 @@ public class spash_screen extends AppCompatActivity {
         Thread thread = new Thread(){
             public void run(){
                 try {
-                    sleep(3000);
+                    sleep(1000);
                 }
                 catch (Exception e){
                     e.printStackTrace();
