@@ -5,9 +5,15 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.Intent;
+import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.navigationbottompractice.fragment.filesfragment;
 import com.example.navigationbottompractice.fragment.homefragment;
@@ -51,14 +57,35 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-//method for toolbar(task bar)......................
+    // start : method for toolbar(task bar)......................
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.menu_button,menu);
         return true;
     }
-//method for toolbar(task bar)......................
+    // finish : method for toolbar(task bar).......................
+
+    //start : method for calling favourite and setting (task bar).......................
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.setting:
+                Intent intent = new Intent(MainActivity.this, setting.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.favourite:
+                Intent intent1 = new Intent(MainActivity.this, favourite.class);
+                startActivity(intent1);
+                return true;
+
+            default:
+                    return super.onOptionsItemSelected(item);
+
+        }
+    }
+    //finish : method for calling favourite and setting (task bar).......................
+
 
 }

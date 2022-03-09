@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NAVIGATIONBOTTOMPRACTICE">
         <activity
+            android:name=".favourite"
+            android:exported="false" />
+        <activity
+            android:name=".setting"
+            android:exported="false" />
+        <activity
             android:name=".spash_screen"
             android:exported="true"
             android:noHistory="true">
@@ -21,9 +27,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>
