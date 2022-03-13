@@ -31,7 +31,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -47,13 +47,15 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
-                        app:cardCornerRadius="10dp">
+                        app:cardCornerRadius="10dp"
+                        tools:ignore="NestedWeights">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -72,6 +74,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/merge_pdf"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -83,9 +86,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -108,6 +112,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/split_pdf"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -119,9 +124,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -144,6 +150,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/signature"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -163,13 +170,15 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
-                        app:cardCornerRadius="10dp">
+                        app:cardCornerRadius="10dp"
+                        tools:ignore="NestedWeights">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -188,6 +197,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/merge_pdf"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -199,9 +209,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -224,6 +235,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/split_pdf"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -235,9 +247,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -260,6 +273,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/signature"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -279,13 +293,15 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
-                        app:cardCornerRadius="10dp">
+                        app:cardCornerRadius="10dp"
+                        tools:ignore="NestedWeights">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -304,6 +320,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/merge_pdf"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -315,9 +332,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -340,6 +358,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/split_pdf"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -351,9 +370,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -376,6 +396,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/signature"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -395,13 +416,15 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
-                        app:cardCornerRadius="10dp">
+                        app:cardCornerRadius="10dp"
+                        tools:ignore="NestedWeights">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -420,6 +443,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/watermark"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -431,9 +455,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -456,6 +481,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/compress_pdf"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -467,9 +493,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -492,6 +519,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/qr_scanner"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -511,13 +539,15 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
-                        app:cardCornerRadius="10dp">
+                        app:cardCornerRadius="10dp"
+                        tools:ignore="NestedWeights">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -536,6 +566,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/jpg_to_pdf"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -547,9 +578,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -572,6 +604,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/word_to_pdf"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -583,9 +616,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -608,6 +642,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/ppt_to_pdf"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -628,13 +663,15 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
-                        app:cardCornerRadius="10dp">
+                        app:cardCornerRadius="10dp"
+                        tools:ignore="NestedWeights">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -653,6 +690,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/pdf_to_jpg"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -664,9 +702,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -689,6 +728,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/pdf_to_word"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
@@ -700,9 +740,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="120dp"
+                        android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -726,6 +767,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textAlignment="center"
                                 android:text="@string/pdf_to_ppt"
                                 android:textColor="@color/purple_700"
                                 android:textSize="15sp"
