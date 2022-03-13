@@ -15,4 +15,13 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
+    <style name="Theme.NAVIGATIONBOTTOMPRACTICE.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.NAVIGATIONBOTTOMPRACTICE.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.NAVIGATIONBOTTOMPRACTICE.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

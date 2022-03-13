@@ -9,5 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="personal">#00BCD4</color>
     <color name="backcard">#DDE8EA</color>
+    <color name="folders">#ABF3CB</color>
 
 </resources>

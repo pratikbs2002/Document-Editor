@@ -4,8 +4,6 @@ import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.os.Build.VERSION.SDK_INT;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +13,6 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -28,10 +25,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.navigationbottompractice.fragment.filesfragment;
+import com.example.navigationbottompractice.fragment.Files.CreateFolder;
+import com.example.navigationbottompractice.fragment.Files.filesFragment;
 import com.example.navigationbottompractice.fragment.homefragment;
 import com.example.navigationbottompractice.fragment.camerafragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
@@ -65,11 +65,15 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
                 case R.id.files:
+                    String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/";
                     if (!permission()) {
                         RequiresPermission_Dialog();
                     }
                     else{
-                        transaction1.replace(R.id.container,new filesfragment()).commit();
+                        transaction1.replace(R.id.container,new filesFragment()).commit();
+                    }
+                    if((!(new File(path).exists()) || (!(new File(path + "/Scanned/").exists()))) ){
+                        CreateFolder.createFolder(Environment.getExternalStorageDirectory(), this);
                     }
                     break;
 
@@ -142,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                     //Granted
                     Toast.makeText(MainActivity.this, "Permission is Granted Successfully", Toast.LENGTH_SHORT).show();
                     FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
-                    transaction1.replace(R.id.container, new filesfragment()).commit();
+                    transaction1.replace(R.id.container, new filesFragment()).commit();
                 } else {
                     //Not Granted
                     Toast.makeText(MainActivity.this, "Permission Is Required To Open Files", Toast.LENGTH_SHORT).show();
@@ -177,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
                         if (Environment.isExternalStorageManager()) {
                             Toast.makeText(MainActivity.this, "Permission is Granted Successfully", Toast.LENGTH_SHORT).show();
                             FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
-                            transaction1.replace(R.id.container, new filesfragment()).commit();
+                            transaction1.replace(R.id.container, new filesFragment()).commit();
                         } else {
                             Toast.makeText(MainActivity.this, "Permission Is Required To Open Files", Toast.LENGTH_SHORT).show();
                             bottomNavigationView = findViewById(R.id.bottom_nav);
