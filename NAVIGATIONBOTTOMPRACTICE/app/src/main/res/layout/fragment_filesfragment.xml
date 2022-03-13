@@ -20,40 +20,43 @@
 
         <Button
             android:id="@+id/btnInternalStorage"
+            android:drawableLeft="@drawable/ic_baseline_internal_storage"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:letterSpacing="0.01"
             android:text="@string/internal_storage"
             android:textAlignment="textStart"
-            android:backgroundTint="@color/folders"
-            android:textColor="#391F68"
+            android:backgroundTint="@color/personal"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:focusable="true"/>
 
         <Button
             android:id="@+id/btnDownloads"
+            android:drawableLeft="@drawable/ic_baseline_downloads"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:letterSpacing="0.01"
             android:text="@string/downloads"
             android:textAlignment="textStart"
-            android:backgroundTint="@color/folders"
-            android:textColor="#391F68"
+            android:backgroundTint="@color/personal"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:focusable="true"/>
 
         <Button
             android:id="@+id/btnAppFolder"
+            android:drawableLeft="@drawable/ic_baseline_doxument_editor"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:letterSpacing="0.01"
             android:text="@string/document_editor"
             android:textAlignment="textStart"
-            android:backgroundTint="@color/folders"
-            android:textColor="#391F68"
+            android:backgroundTint="@color/personal"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:focusable="true"/>
 
