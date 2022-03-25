@@ -17,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NAVIGATIONBOTTOMPRACTICE">
         <activity
+            android:name=".tools.split_pdf"
+            android:exported="false" />
+        <activity
+            android:name=".tools.merge_pdf"
+            android:exported="false" />
+        <activity
             android:name=".fragment.Files.folderList"
             android:exported="false" />
         <activity

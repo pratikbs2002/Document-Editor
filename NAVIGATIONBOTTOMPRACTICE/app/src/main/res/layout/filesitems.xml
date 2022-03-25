@@ -12,7 +12,7 @@
         android:layout_height="80dp"
         android:src="@drawable/ic_baseline_folder_24"
         android:id="@+id/icon_view"
-        android:background="@color/folders"
+        android:background="@color/backcard"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -23,7 +23,7 @@
         android:padding="10dp"
         android:textSize="15sp"
         android:gravity="center_vertical"
-        android:background="@color/folders"
+        android:background="@color/backcard"
         android:textColor="@color/black"
         tools:text="Documents"/>
 

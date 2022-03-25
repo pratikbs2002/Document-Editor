@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
@@ -23,6 +24,7 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.navigationbottompractice.fragment.Files.CreateFolder;
@@ -34,6 +36,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
+    public CardView merge_pdf;
     BottomNavigationView bottomNavigationView;
     boolean check1 = false, check2 = true;
     int check = 0;
