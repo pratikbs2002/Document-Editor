@@ -20,8 +20,9 @@ import com.example.navigationbottompractice.tools.merge_pdf;
  * create an instance of this fragment.
  */
 public class homefragment extends Fragment {
-CardView merge_pdf,split_pdf;
+CardView merge_pdf,split_pdf,signature;
 Toolbar toolbar;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -71,6 +72,7 @@ Toolbar toolbar;
 
         merge_pdf = (CardView) v.findViewById(R.id.merge_pdf_button);
         split_pdf = (CardView) v.findViewById(R.id.split_pdf_button);
+        signature = (CardView) v.findViewById(R.id.signature);
 
 
         split_pdf.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +91,13 @@ Toolbar toolbar;
             }
         });
 
+        signature.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), com.example.navigationbottompractice.tools.signature.class);
+                startActivity(intent);
+            }
+        });
         return v;
     }
 }

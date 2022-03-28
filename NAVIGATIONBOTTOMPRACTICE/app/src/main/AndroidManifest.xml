@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NAVIGATIONBOTTOMPRACTICE">
         <activity
+            android:name=".tools.signature"
+            android:exported="false" />
+        <activity
             android:name=".tools.split_pdf"
             android:exported="false" />
         <activity

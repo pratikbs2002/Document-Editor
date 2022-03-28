@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".setting">
 
+    <include
+        android:id="@+id/main_tool_bar1"
+        layout="@layout/home_page_action">
+    </include>
+
     <TextView
 
         android:text="Hello I am Setting"
