@@ -25,14 +25,23 @@
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2185" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/drawable/ic_baseline_insert_drive_file_24.xml" value="0.2185" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/drawable/ic_baseline_internal_storage.xml" value="0.2185" />
+        <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_compress_pdf.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_favourite.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_folder_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_jpg_to_pdf.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_main.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_merge_pdf.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_pdf_to_jpg.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_pdf_to_ppt.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_pdf_to_word.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_ppt_to_pdf.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_qr_scanner.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_setting.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_signature.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_spash_screen.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_split_pdf.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_watermark.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_word_to_pdf.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/content_signature.xml" value="0.264" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/filesitems.xml" value="0.40651387213510254" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/fragment_camerafragment.xml" value="0.11302083333333333" />

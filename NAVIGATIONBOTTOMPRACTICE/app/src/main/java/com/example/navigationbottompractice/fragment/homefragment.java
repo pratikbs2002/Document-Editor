@@ -20,7 +20,7 @@ import com.example.navigationbottompractice.tools.merge_pdf;
  * create an instance of this fragment.
  */
 public class homefragment extends Fragment {
-CardView merge_pdf,split_pdf,signature;
+CardView merge_pdf,split_pdf,signature,watermark,compress_pdf,qr_scanner,jpg_to_pdf,word_to_pdf,ppt_to_pdf,pdf_to_jpg,pdf_to_word,pdf_to_ppt;
 Toolbar toolbar;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -73,6 +73,15 @@ Toolbar toolbar;
         merge_pdf = (CardView) v.findViewById(R.id.merge_pdf_button);
         split_pdf = (CardView) v.findViewById(R.id.split_pdf_button);
         signature = (CardView) v.findViewById(R.id.signature);
+        watermark = (CardView) v.findViewById(R.id.watermark);
+        compress_pdf = (CardView) v.findViewById(R.id.compress_pdf);
+        qr_scanner = (CardView) v.findViewById(R.id.qr_scanner);
+        jpg_to_pdf= (CardView) v.findViewById(R.id.jpg_to_pdf);
+        word_to_pdf = (CardView) v.findViewById(R.id.word_to_pdf);
+        ppt_to_pdf = (CardView) v.findViewById(R.id.ppt_to_pdf);
+        pdf_to_jpg= (CardView) v.findViewById(R.id.pdf_to_jpg);
+        pdf_to_word = (CardView) v.findViewById(R.id.pdf_to_word);
+        pdf_to_ppt = (CardView) v.findViewById(R.id.pdf_to_ppt);
 
 
         split_pdf.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +107,80 @@ Toolbar toolbar;
                 startActivity(intent);
             }
         });
+
+        watermark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), com.example.navigationbottompractice.tools.watermark.class);
+                startActivity(intent);
+            }
+        });
+
+        compress_pdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), com.example.navigationbottompractice.tools.compress_pdf.class);
+                startActivity(intent);
+            }
+        });
+
+        qr_scanner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), com.example.navigationbottompractice.tools.qr_scanner.class);
+                startActivity(intent);
+            }
+        });
+
+        jpg_to_pdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), com.example.navigationbottompractice.tools.jpg_to_pdf.class);
+                startActivity(intent);
+            }
+        });
+
+        word_to_pdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), com.example.navigationbottompractice.tools.word_to_pdf.class);
+                startActivity(intent);
+            }
+        });
+
+        ppt_to_pdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), com.example.navigationbottompractice.tools.ppt_to_pdf.class);
+                startActivity(intent);
+            }
+        });
+
+        pdf_to_jpg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), com.example.navigationbottompractice.tools.pdf_to_jpg.class);
+                startActivity(intent);
+            }
+        });
+
+        pdf_to_word.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), com.example.navigationbottompractice.tools.pdf_to_word.class);
+                startActivity(intent);
+            }
+        });
+
+        pdf_to_ppt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), com.example.navigationbottompractice.tools.pdf_to_ppt.class);
+                startActivity(intent);
+            }
+        });
+
+
         return v;
     }
 }

@@ -173,6 +173,7 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/watermark"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
@@ -212,6 +213,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/compress_pdf"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
@@ -250,6 +252,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/qr_scanner"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
@@ -296,6 +299,7 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/jpg_to_pdf"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
@@ -335,6 +339,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/word_to_pdf"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
@@ -373,6 +378,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/ppt_to_pdf"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
@@ -419,6 +425,7 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/pdf_to_jpg"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
@@ -458,6 +465,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/pdf_to_word"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"
@@ -496,6 +504,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/pdf_to_ppt"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
                         android:layout_margin="5dp"

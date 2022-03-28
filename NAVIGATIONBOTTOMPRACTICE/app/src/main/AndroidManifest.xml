@@ -17,6 +17,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NAVIGATIONBOTTOMPRACTICE">
         <activity
+            android:name=".tools.pdf_to_ppt"
+            android:exported="false" />
+        <activity
+            android:name=".tools.pdf_to_word"
+            android:exported="false" />
+        <activity
+            android:name=".tools.pdf_to_jpg"
+            android:exported="false" />
+        <activity
+            android:name=".tools.ppt_to_pdf"
+            android:exported="false" />
+        <activity
+            android:name=".tools.word_to_pdf"
+            android:exported="false" />
+        <activity
+            android:name=".tools.jpg_to_pdf"
+            android:exported="false" />
+        <activity
+            android:name=".tools.qr_scanner"
+            android:exported="false" />
+        <activity
+            android:name=".tools.compress_pdf"
+            android:exported="false" />
+        <activity
+            android:name=".tools.watermark"
+            android:exported="false" />
+        <activity
             android:name=".tools.signature"
             android:exported="false" />
         <activity
