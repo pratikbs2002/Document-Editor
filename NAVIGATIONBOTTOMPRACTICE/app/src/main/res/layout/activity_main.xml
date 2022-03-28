@@ -8,23 +8,19 @@
     android:orientation="vertical">
 
 
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="wrap_content">-->
-
-
         <include
             android:id="@+id/main_tool_bar"
-            layout="@layout/home_page_action">
+            layout="@layout/home_page_action"
+            >
         </include>
-
-
-
-
 
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/main_tool_bar"
         app:layout_constraintBottom_toBottomOf="@+id/bottom_nav">
     </FrameLayout>
 

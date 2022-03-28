@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="@android:dimen/app_icon_size"
+    android:layout_marginTop="@android:dimen/app_icon_size"
     tools:context=".fragment.homefragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -13,13 +15,13 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     app:cardElevation="1000dp"
-    android:layout_marginTop="@android:dimen/notification_large_icon_height"
-    android:layout_marginBottom="@android:dimen/app_icon_size"
-    app:cardBackgroundColor="@color/backcard">
+
+    app:cardBackgroundColor="@color/background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <ScrollView
             android:layout_width="match_parent"
@@ -34,6 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_margin="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -47,9 +50,10 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:id="@+id/merge_pdf_button"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -87,9 +91,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:id="@+id/split_pdf_button"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -126,9 +131,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:id="@+id/signature"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -173,9 +179,10 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:id="@+id/watermark"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -213,9 +220,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:id="@+id/compress_pdf"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -252,9 +260,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:id="@+id/qr_scanner"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -299,9 +308,10 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:id="@+id/jpg_to_pdf"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -339,9 +349,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:id="@+id/word_to_pdf"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -378,9 +389,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:id="@+id/ppt_to_pdf"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -425,9 +437,10 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:id="@+id/pdf_to_jpg"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -465,9 +478,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:id="@+id/pdf_to_word"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -504,9 +518,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:id="@+id/pdf_to_ppt"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -549,11 +564,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
+                    android:layout_marginBottom="40dp"
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -568,31 +585,14 @@
                             android:gravity="center"
                             android:orientation="vertical"
                             tools:ignore="UseCompoundDrawables">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_margin="15dp"
-                                android:src="@drawable/merge"
-                                tools:ignore="ContentDescription" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAlignment="center"
-                                android:text="@string/merge_pdf"
-                                android:textColor="@color/purple_700"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
-
-
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -606,31 +606,14 @@
                             android:gravity="center"
                             android:orientation="vertical"
                             tools:ignore="UseCompoundDrawables">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_margin="15dp"
-                                android:src="@drawable/split"
-                                tools:ignore="ContentDescription" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAlignment="center"
-                                android:text="@string/split_pdf"
-                                android:textColor="@color/purple_700"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
-
-
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        app:cardElevation="5dp"
                         android:layout_width="0dp"
-                        android:layout_height="140dp"
+                        android:layout_height="160dp"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -644,154 +627,12 @@
                             android:gravity="center"
                             android:orientation="vertical"
                             tools:ignore="UseCompoundDrawables">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_margin="15dp"
-                                android:src="@drawable/signature"
-                                tools:ignore="ContentDescription" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAlignment="center"
-                                android:text="@string/signature"
-                                android:textColor="@color/purple_700"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
-
 
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:layout_weight="3"
-                    android:orientation="horizontal">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="140dp"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        app:cardCornerRadius="10dp"
-                        tools:ignore="NestedWeights">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            tools:ignore="UseCompoundDrawables">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_margin="15dp"
-                                android:src="@drawable/merge"
-                                tools:ignore="ContentDescription" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAlignment="center"
-                                android:text="@string/merge_pdf"
-                                android:textColor="@color/purple_700"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
-
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="140dp"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        app:cardCornerRadius="10dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            tools:ignore="UseCompoundDrawables">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_margin="15dp"
-                                android:src="@drawable/split"
-                                tools:ignore="ContentDescription" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAlignment="center"
-                                android:text="@string/split_pdf"
-                                android:textColor="@color/purple_700"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
-
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="140dp"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        app:cardCornerRadius="10dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            tools:ignore="UseCompoundDrawables">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_margin="15dp"
-                                android:src="@drawable/signature"
-                                tools:ignore="ContentDescription" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAlignment="center"
-                                android:text="@string/signature"
-                                android:textColor="@color/purple_700"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
-
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-
 
 
             </LinearLayout>

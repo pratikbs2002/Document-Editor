@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="1dp"
-    android:background="@color/backcard"
+    android:background="@color/background"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal">
 
@@ -12,7 +12,7 @@
         android:layout_height="80dp"
         android:src="@drawable/ic_baseline_folder_24"
         android:id="@+id/icon_view"
-        android:background="@color/backcard"
+        android:background="@color/background"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -23,7 +23,7 @@
         android:padding="10dp"
         android:textSize="15sp"
         android:gravity="center_vertical"
-        android:background="@color/backcard"
+        android:background="@color/background"
         android:textColor="@color/black"
         tools:text="Documents"/>
 
