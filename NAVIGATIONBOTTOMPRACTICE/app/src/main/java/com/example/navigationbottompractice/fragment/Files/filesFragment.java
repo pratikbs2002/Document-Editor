@@ -1,6 +1,7 @@
 package com.example.navigationbottompractice.fragment.Files;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -89,10 +90,15 @@ public class filesFragment extends Fragment {
         });
 
         btnDownloads.setOnClickListener(view1 -> {
-            Intent intent = new Intent(getActivity(), folderList.class);
+//            Intent intent = new Intent(getActivity(), folderList.class);
             String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
-            intent.putExtra("path", path);
-            startActivity(intent);
+//            intent.putExtra("path", path);
+//            startActivity(intent);
+
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            Uri uri = Uri.parse(path); // a directory
+            intent.setDataAndType(uri, "*/*");
+            startActivity(Intent.createChooser(intent, "Open folder"));
         });
 
         btnAppFolder.setOnClickListener(view1 -> {

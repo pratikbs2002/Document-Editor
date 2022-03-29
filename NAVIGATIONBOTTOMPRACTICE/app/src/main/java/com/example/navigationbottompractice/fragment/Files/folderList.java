@@ -28,7 +28,11 @@ public class folderList extends AppCompatActivity {
 
         String path = getIntent().getStringExtra("path");
         File root = new File(path);
-        FileFilter filterDirectory = file -> !file.isHidden();
+        FileFilter filterDirectory = file -> !file.isHidden() && (file.getName().endsWith(".pdf") ||
+                file.getName().endsWith(".doc") || file.getName().endsWith(".docx") ||
+                file.getName().endsWith(".ppt") || file.getName().endsWith(".jpg") || file.getName().endsWith(".png") ||
+                file.getName().endsWith(".jpeg") || file.isDirectory() || file.getName().endsWith(".txt") ||
+                file.getName().endsWith(".xls") || file.getName().endsWith(".xlsx"));
         File[] fileList = root.listFiles(filterDirectory);
 
         toolbar = findViewById(R.id.main_tool_bar1);

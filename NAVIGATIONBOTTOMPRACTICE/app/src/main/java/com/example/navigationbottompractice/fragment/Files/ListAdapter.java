@@ -1,13 +1,16 @@
 package com.example.navigationbottompractice.fragment.Files;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.MimeTypeMap;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -54,17 +57,54 @@ public class ListAdapter extends  RecyclerView.Adapter<ListAdapter.ViewHolder> {
                 context.startActivity(intent);
             }
             else{
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
-                try{
-                    String type = "image/*";
-                    intent.setDataAndType(Uri.parse(selectedFile.getAbsolutePath()), type);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+//                try{
+//                    String type = "image/*";
+//                    intent.setDataAndType(Uri.parse(selectedFile.getAbsolutePath()), type);
+//                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    context.startActivity(intent);
+//                }
+//                catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+
+
+                try {
+
+                    Uri uri = Uri.parse(selectedFile.getAbsolutePath());
+//                    Uri uri = Uri.fromFile(selectedFile);
+                    Intent intent = new Intent();
+                    intent.setAction(Intent.ACTION_VIEW);
+
+                    if (selectedFile.getName().endsWith(".doc") || selectedFile.getName().endsWith(".docx")) {
+                        // Word document
+                        intent.setDataAndType(uri, "application/msword");
+                    } else if (selectedFile.getName().endsWith(".pdf")) {
+                        // PDF file
+                        intent.setDataAndType(uri, "application/pdf");
+                    } else if (selectedFile.getName().endsWith(".ppt") || selectedFile.getName().endsWith(".pptx")) {
+                        // Powerpoint file
+                        intent.setDataAndType(uri, "application/vnd.ms-powerpoint");
+                    } else if (selectedFile.getName().endsWith(".xls") || selectedFile.getName().endsWith(".xlsx")) {
+                        // Excel file
+                        intent.setDataAndType(uri, "application/vnd.ms-excel");
+                    } else if (selectedFile.getName().endsWith(".jpg") || selectedFile.getName().endsWith(".jpeg") || selectedFile.getName().endsWith(".png")) {
+                        // JPG file
+                        intent.setDataAndType(uri, "image/jpeg");
+                    } else if (selectedFile.getName().endsWith(".txt")) {
+                        // Text file
+                        intent.setDataAndType(uri, "text/plain");
+                    } else {
+                        intent.setDataAndType(uri, "*/*");
+                    }
+
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(context, "No application found which can open the file", Toast.LENGTH_SHORT).show();
                 }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
+
+
             }
         });
     }
