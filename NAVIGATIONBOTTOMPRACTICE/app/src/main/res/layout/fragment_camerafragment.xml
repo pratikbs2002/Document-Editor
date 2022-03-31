@@ -7,7 +7,7 @@
     android:layout_marginBottom="@android:dimen/app_icon_size"
     android:layout_marginTop="@android:dimen/app_icon_size"
 
-    tools:context=".fragment.camerafragment">
+    tools:context=".fragment.Camera.camerafragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -21,7 +21,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:background="@color/background"
-        >
+        tools:ignore="UselessParent">
         <androidx.cardview.widget.CardView
         app:cardElevation="4dp"
         android:layout_width="match_parent"
@@ -48,6 +48,7 @@
                 tools:ignore="ContentDescription" />
 
             <Button
+                android:id="@+id/btnScan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -86,11 +87,12 @@
                     tools:ignore="ContentDescription" />
 
                 <Button
+                    android:id="@+id/btnSelectFromStorage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:text="SELECT FROM PHONE STORAGE"
-                    android:textColor="@color/background"
+                    android:textColor="@color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 

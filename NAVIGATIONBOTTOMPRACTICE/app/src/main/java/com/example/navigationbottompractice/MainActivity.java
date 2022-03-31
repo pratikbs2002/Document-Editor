@@ -24,13 +24,12 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.example.navigationbottompractice.fragment.Files.CreateFolder;
 import com.example.navigationbottompractice.fragment.Files.filesFragment;
 import com.example.navigationbottompractice.fragment.homefragment;
-import com.example.navigationbottompractice.fragment.camerafragment;
+import com.example.navigationbottompractice.fragment.Camera.camerafragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.File;
