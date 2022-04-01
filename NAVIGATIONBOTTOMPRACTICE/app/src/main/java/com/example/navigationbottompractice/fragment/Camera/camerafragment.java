@@ -20,7 +20,6 @@ import android.widget.Toast;
 import com.example.navigationbottompractice.R;
 import com.example.navigationbottompractice.fragment.Files.ActualPath;
 
-import javax.xml.transform.Result;
 
 /**
  * A simple {@link Fragment} subclass.
