@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/camera"
+            android:title="hello" />
+
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/file"
+            android:title="@string/files" />
+
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/home"
+            android:title="@string/home" />
+
+        <item
+            android:icon="@drawable/file"
+            android:title="@string/files" />
+
+        <item
+            android:icon="@drawable/home"
+            android:title="@string/home" />
+
+        <item
+            android:icon="@drawable/file"
+            android:title="@string/files" />
+
+        <item
+
+            android:icon="@drawable/home"
+            android:title="@string/home" />
+
+        <item
+
+            android:icon="@drawable/file"
+            android:title="@string/files" />
+
+        <item
+
+            android:icon="@drawable/home"
+            android:title="@string/home" />
+
+        <item
+
+            android:icon="@drawable/file"
+            android:title="@string/files" />
+        <item
+
+            android:icon="@drawable/home"
+            android:title="@string/home" />
+    </group>
+<item android:title="Others">
+    <menu android:id="@+id/others"
+        >
+        <item
+            android:title="About us" />
+
+        <item android:title="Contact / Help">
+
+        </item>
+        <item android:title="Share App">
+
+        </item>
+    </menu>
+</item>
+
+</menu>

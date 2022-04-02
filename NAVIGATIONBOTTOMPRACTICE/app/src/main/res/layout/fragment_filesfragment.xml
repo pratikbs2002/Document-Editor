@@ -48,7 +48,7 @@
 
         <Button
             android:id="@+id/btnAppFolder"
-            android:drawableLeft="@drawable/ic_baseline_doxument_editor"
+            android:drawableLeft="@drawable/ic_baseline_document_editor"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"

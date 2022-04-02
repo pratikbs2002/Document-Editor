@@ -1,31 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".setting">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
     <include
         android:id="@+id/main_tool_bar1"
-        layout="@layout/home_page_action">
+        layout="@layout/home_page_action"
+        >
     </include>
-
-    <TextView
-
-        android:text="Hello I am Setting"
-        android:textSize="30dp"
-        android:textColor="@color/teal_700"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toTopOf="@id/main_tool_bar1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="50dp"
+                android:layout_gravity="start"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:text="WELCOME GUYS">
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+            </TextView>
 
-    </TextView>
+        </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginBottom="@android:dimen/app_icon_size"
+                android:fitsSystemWindows="true"
+                app:menu="@menu/setting_icon">
+
+            </com.google.android.material.navigation.NavigationView>
+        </ScrollView>
+</LinearLayout>
