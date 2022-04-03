@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
@@ -29,13 +28,12 @@ import android.widget.Toast;
 import com.example.navigationbottompractice.fragment.Files.CreateFolder;
 import com.example.navigationbottompractice.fragment.Files.filesFragment;
 import com.example.navigationbottompractice.fragment.homefragment;
-import com.example.navigationbottompractice.fragment.Camera.camerafragment;
+import com.example.navigationbottompractice.fragment.Camera.cameraFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
-    public CardView merge_pdf;
     BottomNavigationView bottomNavigationView;
     boolean check1 = false, check2 = true;
     int check = 0;
@@ -74,14 +72,16 @@ public class MainActivity extends AppCompatActivity {
                     else{
                         transaction1.replace(R.id.container,new filesFragment()).commit();
                     }
-                    if((!(new File(path).exists()) || (!(new File(path + "/Scanned/").exists()))) ){
-                        CreateFolder.createFolder(Environment.getExternalStorageDirectory(), this);
+                    if((!(new File(path).exists()) ||
+                            (!(new File(path + "/Scanned Images/").exists()))  ||
+                            (!(new File(path + "/PDF Files/").exists())))){
+                        CreateFolder.createFolder(Environment.getExternalStorageDirectory());
                     }
                     break;
 
                 case R.id.camera:
                     check = 2;
-                    transaction1.replace(R.id.container,new camerafragment()).commit();
+                    transaction1.replace(R.id.container,new cameraFragment()).commit();
                     break;
             }
             return true;
@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
     // finish : method for toolbar(task bar).......................
 
     //start : method for calling favourite and setting (task bar).......................
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -160,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else if(check == 2){
                         bottomNavigationView.getMenu().getItem(2).setChecked(true);
-                        transaction1.replace(R.id.container, new camerafragment()).commit();
+                        transaction1.replace(R.id.container, new cameraFragment()).commit();
                     }
                 }
             }
@@ -194,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                             else if(check == 2){
                                 bottomNavigationView.getMenu().getItem(2).setChecked(true);
-                                transaction1.replace(R.id.container, new camerafragment()).commit();
+                                transaction1.replace(R.id.container, new cameraFragment()).commit();
                             }
                         }
                     }
@@ -203,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private boolean permission() {
+    public boolean permission() {
         if(SDK_INT >= Build.VERSION_CODES.R){
             return Environment.isExternalStorageManager();
         }

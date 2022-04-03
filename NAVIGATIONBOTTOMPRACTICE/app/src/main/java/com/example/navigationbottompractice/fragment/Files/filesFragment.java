@@ -103,8 +103,10 @@ public class filesFragment extends Fragment {
 
         btnAppFolder.setOnClickListener(view1 -> {
             String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/";
-            if((!(new File(path).exists()) || (!(new File(path + "/Scanned/").exists()))) ){
-                CreateFolder.createFolder(Environment.getExternalStorageDirectory(), getActivity());
+            if((!(new File(path).exists()) ||
+                    (!(new File(path + "/Scanned Images/").exists()))  ||
+                    (!(new File(path + "/PDF Files/").exists())))){
+                CreateFolder.createFolder(Environment.getExternalStorageDirectory());
             }
             Intent intent = new Intent(getActivity(), folderList.class);
             intent.putExtra("path", path);

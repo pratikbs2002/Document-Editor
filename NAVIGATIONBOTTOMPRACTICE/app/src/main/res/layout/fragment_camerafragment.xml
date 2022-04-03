@@ -7,9 +7,15 @@
     android:layout_marginBottom="@android:dimen/app_icon_size"
     android:layout_marginTop="@android:dimen/app_icon_size"
 
-    tools:context=".fragment.Camera.camerafragment">
+    tools:context=".fragment.Camera.cameraFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/imageTP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="ContentDescription" />
 
 
     <LinearLayout
