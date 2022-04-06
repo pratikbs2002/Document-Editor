@@ -30,7 +30,7 @@
                 android:layout_gravity="start"
                 android:gravity="center"
                 android:textSize="30dp"
-                android:text="WELCOME GUYS">
+                android:text="DOCUMENT EDITOR">
 
             </TextView>
 

@@ -4,58 +4,10 @@
     tools:showIn="navigation_view"
     >
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/camera"
-            android:title="hello" />
-
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/file"
-            android:title="@string/files" />
-
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/home"
-            android:title="@string/home" />
-
-        <item
-            android:icon="@drawable/file"
-            android:title="@string/files" />
-
-        <item
-            android:icon="@drawable/home"
-            android:title="@string/home" />
-
-        <item
-            android:icon="@drawable/file"
-            android:title="@string/files" />
-
-        <item
-
-            android:icon="@drawable/home"
-            android:title="@string/home" />
-
-        <item
-
-            android:icon="@drawable/file"
-            android:title="@string/files" />
-
-        <item
-
-            android:icon="@drawable/home"
-            android:title="@string/home" />
-
-        <item
-
-            android:icon="@drawable/file"
-            android:title="@string/files" />
-        <item
-
-            android:icon="@drawable/home"
-            android:title="@string/home" />
-    </group>
+<!--    <group android:checkableBehavior="single">-->
+<!--        <item-->
+<!--            android:title="@string/home" />-->
+<!--    </group>-->
 <item android:title="Others">
     <menu android:id="@+id/others"
         >
