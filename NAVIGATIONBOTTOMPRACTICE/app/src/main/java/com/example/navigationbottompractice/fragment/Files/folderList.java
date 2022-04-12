@@ -8,12 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.navigationbottompractice.*;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Objects;
@@ -26,6 +29,18 @@ public class folderList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_folder_list);
 
+
+        Button btnCreatePdf = findViewById(R.id.btnCreatePdf);
+
+        btnCreatePdf.setOnClickListener(v -> {
+            JPEG_PDF obj = new JPEG_PDF();
+            try {
+                obj.createPdf(getApplicationContext());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Toast.makeText(this, "PDF created Successfully", Toast.LENGTH_SHORT).show();
+        });
         String path = getIntent().getStringExtra("path");
         File root = new File(path);
         FileFilter filterDirectory = file -> !file.isHidden() && (file.getName().endsWith(".pdf") ||

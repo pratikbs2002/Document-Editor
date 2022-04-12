@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 
 import com.example.navigationbottompractice.R;
+import com.example.navigationbottompractice.fragment.Files.CreateFolder;
 import com.example.navigationbottompractice.fragment.Files.folderList;
 
 import java.io.BufferedOutputStream;
@@ -106,6 +107,25 @@ public class cameraFragment extends Fragment {
         });
 
         btnSelectFromStorage.setOnClickListener(v -> {
+            String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/";
+
+            if ((!(new File(path).exists()) ||
+                    (!(new File(path + "/Scanned Images/").exists())) ||
+                    (!(new File(path + "/PDF Files/").exists())))) {
+                CreateFolder.createFolder(Environment.getExternalStorageDirectory());
+            }
+            String pathOfScannedImages = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/Scanned Images/";
+            File images = new File(pathOfScannedImages);
+            File[] listOfImages = images.listFiles();
+            if (listOfImages != null) {
+                int i = 0;
+                while (i < listOfImages.length) {
+                    //noinspection ResultOfMethodCallIgnored
+                    listOfImages[i].delete();
+                    i++;
+                }
+            }
+
             Intent intent = new Intent();
             intent.setType("image/*");
             intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
@@ -128,7 +148,6 @@ public class cameraFragment extends Fragment {
                 ContentResolver cR = requireActivity().getContentResolver();
                 String[] type = cR.getType(uri).split("/");
                 if (type[0].equals("image")) {
-                    ivImage.setVisibility(View.INVISIBLE);
                     ivImage.setImageURI(uri);
                     Bitmap image = ((BitmapDrawable) ivImage.getDrawable()).getBitmap();
                     String ms = "_".concat(String.valueOf(Calendar.getInstance().getTimeInMillis()));
@@ -160,9 +179,21 @@ public class cameraFragment extends Fragment {
                     ContentResolver cR = requireActivity().getContentResolver();
                     String[] type = cR.getType(uri).split("/");
                     if (type[0].equals("image")) {
-                        ivImage.setVisibility(View.INVISIBLE);
                         ivImage.setImageURI(uri);
                         Bitmap image = ((BitmapDrawable) ivImage.getDrawable()).getBitmap();
+                        Bitmap scaled;
+                        if(image.getWidth() > (int) (8.5f * 72)){
+                            scaled = Bitmap.createScaledBitmap(image,
+                                    (int) (8.5f * 72),
+                                    (int) (11f * 72),
+                                    true);
+                        }else{
+                            scaled = Bitmap.createScaledBitmap(image,
+                                    (int) (8.5f * 72),
+                                    (int) (11f * 72),
+                                    true);
+                        }
+
                         String ms = "_".concat(String.valueOf(Calendar.getInstance().getTimeInMillis()));
                         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
                         String name = ("IMG_".concat(sdf.format(new Date()).concat(ms))).concat(".jpeg");
@@ -171,7 +202,7 @@ public class cameraFragment extends Fragment {
                             //noinspection ResultOfMethodCallIgnored
                             file.createNewFile();
                             OutputStream os = new BufferedOutputStream(new FileOutputStream(file));
-                            image.compress(Bitmap.CompressFormat.JPEG, 100, os);
+                            scaled.compress(Bitmap.CompressFormat.JPEG, 100, os);
                             os.close();
                         } catch (IOException e) {
                             e.printStackTrace();
