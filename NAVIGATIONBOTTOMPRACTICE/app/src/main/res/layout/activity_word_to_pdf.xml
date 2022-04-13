@@ -9,4 +9,16 @@
         android:id="@+id/main_tool_bar1"
         layout="@layout/home_page_action">
     </include>
+    <Button
+        android:id="@+id/button"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UPLOAD WORD DOCUMENT"
+        app:layout_constraintTop_toTopOf="@id/main_tool_bar1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="321dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
