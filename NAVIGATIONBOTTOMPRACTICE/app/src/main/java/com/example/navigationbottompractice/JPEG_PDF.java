@@ -1,7 +1,14 @@
 package com.example.navigationbottompractice;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.media.ExifInterface;
 import android.os.Environment;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.tom_roush.pdfbox.android.PDFBoxResourceLoader;
@@ -12,6 +19,8 @@ import com.tom_roush.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
@@ -37,13 +46,13 @@ public class JPEG_PDF {
         int i = 0;
         PDDocument document = new PDDocument();
         Toast.makeText(c, String.valueOf(images.length), Toast.LENGTH_SHORT).show();
-        while(i < images.length){
+        while (i < images.length) {
             Toast.makeText(c, String.valueOf(i), Toast.LENGTH_SHORT).show();
             //Creating a blank page
             PDPage blankPage = new PDPage();
 
             //Adding the blank page to the document
-            document.addPage( blankPage );
+            document.addPage(blankPage);
             i++;
         }
         //Saving the document
@@ -61,13 +70,16 @@ public class JPEG_PDF {
             PDPage page = doc.getPage(i);
 
             //Creating PDImageXObject object
-            PDImageXObject pdImage = PDImageXObject.createFromFile(images[i].getPath(),doc);
+            PDImageXObject pdImage = PDImageXObject.createFromFile(images[i].getPath(), doc);
 
             //creating the PDPageContentStream object
             PDPageContentStream contents = new PDPageContentStream(doc, page);
 
+            Bitmap myBitmap = BitmapFactory.decodeFile(images[i].getAbsolutePath());
+            float x = (float) ((width - myBitmap.getWidth())/2.0);
+            float y = (float) ((height - myBitmap.getHeight())/2.0);
             //Drawing the image in the PDF document
-            contents.drawImage(pdImage, 0, 0);
+            contents.drawImage(pdImage, x, y);
 
             //Closing the PDPageContentStream object
             contents.close();

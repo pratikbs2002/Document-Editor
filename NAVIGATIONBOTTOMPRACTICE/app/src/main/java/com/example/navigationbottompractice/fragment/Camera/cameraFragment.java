@@ -182,12 +182,22 @@ public class cameraFragment extends Fragment {
                         ivImage.setImageURI(uri);
                         Bitmap image = ((BitmapDrawable) ivImage.getDrawable()).getBitmap();
                         Bitmap scaled;
-                        if(image.getWidth() > (int) (8.5f * 72)){
+                        float ratio = (float)(image.getHeight() / image.getWidth());
+                        if(image.getHeight() > (int) (11f * 72)){
+
                             scaled = Bitmap.createScaledBitmap(image,
-                                    (int) (8.5f * 72),
+                                    (int) ((11f * 72)/ratio),
                                     (int) (11f * 72),
                                     true);
-                        }else{
+                        }
+                        else if(image.getWidth() >= (int) (8.5f * 72)){
+                            Toast.makeText(getActivity(), "xcd", Toast.LENGTH_SHORT).show();
+                            scaled = Bitmap.createScaledBitmap(image,
+                                    (int) (8.5f * 72),
+                                    (int) ((8.5f * 72) * ratio),
+                                    true);
+                        }
+                        else{
                             scaled = Bitmap.createScaledBitmap(image,
                                     (int) (8.5f * 72),
                                     (int) (11f * 72),
