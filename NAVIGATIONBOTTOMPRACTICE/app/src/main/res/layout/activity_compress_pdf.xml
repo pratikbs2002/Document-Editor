@@ -10,10 +10,16 @@
         android:id="@+id/main_tool_bar1"
         layout="@layout/home_page_action">
     </include>
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_constraintTop_toBottomOf="@id/main_tool_bar1"
+    app:layout_constraintBottom_toTopOf="parent"
+    android:gravity="center"
+    >
     <Button
         android:id="@+id/button"
-        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="UPLOAD PDF"
@@ -24,65 +30,135 @@
         tools:layout_editor_absoluteX="158dp"
         tools:layout_editor_absoluteY="321dp"
         tools:ignore="HardcodedText" />
-<androidx.cardview.widget.CardView
-    android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/button"
-    android:layout_marginTop="20dp"
-    app:cardCornerRadius="5dp"
-    app:cardElevation="15dp"
-    >
 
-    <LinearLayout
-        android:layout_gravity="center"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="15dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHOOSE OPTION FROM THE BELOW :"
+                    android:layout_margin="10dp"
+                    android:textSize="15dp"
+                    >
+
+
+                </TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <RadioButton
+                        android:id="@+id/radioButton1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="LOW COMPRESS"
+                        />
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="MEDIUM COMPRESS"
+                        />
+                    <RadioButton
+                        android:id="@+id/radioButton3"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="HIGH COMPRESS" />
+                </RadioGroup>
+
+
+
+<!--                <CheckBox-->
+<!--                    android:id="@+id/low_compress"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="LOW COMPRESS"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.498"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/button"-->
+<!--                    app:layout_constraintVertical_bias="0.305"-->
+<!--                    tools:ignore="HardcodedText" />-->
+
+<!--                <CheckBox-->
+<!--                    android:id="@+id/medium_compress"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="MEDIUM COMPRESS"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.498"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/low_compress"-->
+<!--                    app:layout_constraintVertical_bias="0.132"-->
+<!--                    tools:ignore="HardcodedText" />-->
+
+<!--                <CheckBox-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="HIGH COMPRESS"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.498"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/medium_compress"-->
+<!--                    app:layout_constraintVertical_bias="0.132"-->
+<!--                    tools:ignore="HardcodedText" />-->
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:id="@+id/compress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:text="COMPRESS PDF"
+        app:layout_constraintTop_toBottomOf="@id/card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="321dp"
+        tools:ignore="HardcodedText" />
+</LinearLayout>
 
-        <CheckBox
-            android:id="@+id/low_compress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LOW COMPRESS"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button"
-            app:layout_constraintVertical_bias="0.305"
-            tools:ignore="HardcodedText" />
 
-        <CheckBox
-            android:id="@+id/medium_compress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="MEDIUM COMPRESS"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/low_compress"
-            app:layout_constraintVertical_bias="0.132"
-            tools:ignore="HardcodedText" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="HIGH COMPRESS"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/medium_compress"
-            app:layout_constraintVertical_bias="0.132"
-            tools:ignore="HardcodedText" />
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
