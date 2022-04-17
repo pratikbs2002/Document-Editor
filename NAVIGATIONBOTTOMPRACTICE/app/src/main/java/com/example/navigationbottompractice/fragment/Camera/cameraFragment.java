@@ -178,8 +178,8 @@ public class cameraFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         // When an Image is picked
+        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/Scanned Images/";
         if (requestCode == PICK_IMAGE_MULTIPLE && resultCode == Activity.RESULT_OK) {
-            String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/Scanned Images/";
 
             if (data.getData() != null) {
                 // Get the Image from data
@@ -190,30 +190,6 @@ public class cameraFragment extends Fragment {
                     ivImage.setImageURI(uri);
                     Bitmap image = ((BitmapDrawable) ivImage.getDrawable()).getBitmap();
 
-                    Bitmap scaled;
-                    float ratio = (float)(image.getHeight() / image.getWidth());
-                    if(image.getHeight() > (int) (11f * 72)){
-
-                        scaled = Bitmap.createScaledBitmap(image,
-                                (int) ((11f * 72)/ratio),
-                                (int) (11f * 72),
-                                true);
-                    }
-                    else if(image.getWidth() >= (int) (8.5f * 72)){
-                        Toast.makeText(getActivity(), "xcd", Toast.LENGTH_SHORT).show();
-                        scaled = Bitmap.createScaledBitmap(image,
-                                (int) (8.5f * 72),
-                                (int) ((8.5f * 72) * ratio),
-                                true);
-                    }
-                    else{
-                        scaled = Bitmap.createScaledBitmap(image,
-                                (int) (8.5f * 72),
-                                (int) (11f * 72),
-                                true);
-                    }
-
-
                     String ms = "_".concat(String.valueOf(Calendar.getInstance().getTimeInMillis()));
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
                     String name = ("IMG_".concat(sdf.format(new Date()).concat(ms))).concat(".jpeg");
@@ -222,7 +198,7 @@ public class cameraFragment extends Fragment {
                         //noinspection ResultOfMethodCallIgnored
                         file.createNewFile();
                         OutputStream os = new BufferedOutputStream(new FileOutputStream(file));
-                        scaled.compress(Bitmap.CompressFormat.JPEG, 100, os);
+                        image.compress(Bitmap.CompressFormat.JPEG, 100, os);
                         os.close();
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -246,28 +222,6 @@ public class cameraFragment extends Fragment {
                     if (type[0].equals("image")) {
                         ivImage.setImageURI(uri);
                         Bitmap image = ((BitmapDrawable) ivImage.getDrawable()).getBitmap();
-                        Bitmap scaled;
-                        float ratio = (float)(image.getHeight() / image.getWidth());
-                        if(image.getHeight() > (int) (11f * 72)){
-
-                            scaled = Bitmap.createScaledBitmap(image,
-                                    (int) ((11f * 72)/ratio),
-                                    (int) (11f * 72),
-                                    true);
-                        }
-                        else if(image.getWidth() >= (int) (8.5f * 72)){
-                            Toast.makeText(getActivity(), "xcd", Toast.LENGTH_SHORT).show();
-                            scaled = Bitmap.createScaledBitmap(image,
-                                    (int) (8.5f * 72),
-                                    (int) ((8.5f * 72) * ratio),
-                                    true);
-                        }
-                        else{
-                            scaled = Bitmap.createScaledBitmap(image,
-                                    (int) (8.5f * 72),
-                                    (int) (11f * 72),
-                                    true);
-                        }
 
                         String ms = "_".concat(String.valueOf(Calendar.getInstance().getTimeInMillis()));
                         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
@@ -277,7 +231,7 @@ public class cameraFragment extends Fragment {
                             //noinspection ResultOfMethodCallIgnored
                             file.createNewFile();
                             OutputStream os = new BufferedOutputStream(new FileOutputStream(file));
-                            scaled.compress(Bitmap.CompressFormat.JPEG, 100, os);
+                            image.compress(Bitmap.CompressFormat.JPEG, 100, os);
                             os.close();
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -297,9 +251,11 @@ public class cameraFragment extends Fragment {
 
         if (requestCode == reqCap) {
             if (resultCode == Activity.RESULT_OK) {
-                Intent i = new Intent(getActivity(), showCapturedImage.class);
-                i.putExtra("UriOfImage", imageUri);
-                requireActivity().startActivity(i);
+                Intent intent = new Intent(getActivity(), folderList.class);
+                intent.putExtra("path", path);
+                intent.putExtra("btnCreatePdf", 2);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                requireActivity().startActivity(intent);
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
@@ -316,7 +272,6 @@ public class cameraFragment extends Fragment {
             uri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
         }
 
-//        return uri;
         String ms = "_".concat(String.valueOf(Calendar.getInstance().getTimeInMillis()));
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
         String name = ("IMG_".concat(sdf.format(new Date()).concat(ms))).concat(".jpeg");
