@@ -45,9 +45,7 @@ public class JPEG_PDF {
 
         int i = 0;
         PDDocument document = new PDDocument();
-        Toast.makeText(c, String.valueOf(images.length), Toast.LENGTH_SHORT).show();
         while (i < images.length) {
-            Toast.makeText(c, String.valueOf(i), Toast.LENGTH_SHORT).show();
             //Creating a blank page
             PDPage blankPage = new PDPage();
 
@@ -89,5 +87,6 @@ public class JPEG_PDF {
 
         //Closing the document
         doc.close();
+        Toast.makeText(c.getApplicationContext(), "PDF Created Successfully.", Toast.LENGTH_SHORT).show();
     }
 }
