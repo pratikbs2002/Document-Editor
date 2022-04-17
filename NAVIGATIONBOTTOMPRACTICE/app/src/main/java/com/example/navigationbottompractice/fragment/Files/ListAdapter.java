@@ -56,6 +56,7 @@ public class ListAdapter extends  RecyclerView.Adapter<ListAdapter.ViewHolder> {
                 Intent intent = new Intent(context, folderList.class);
                 String path = selectedFile.getAbsolutePath();
                 intent.putExtra("path", path);
+                intent.putExtra("btnCreatePdf", 1);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }

@@ -1,19 +1,30 @@
 package com.example.navigationbottompractice.fragment.Camera;
 
+import static android.Manifest.permission.CAMERA;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static android.os.Build.VERSION.SDK_INT;
+
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.Environment;
+import android.provider.MediaStore;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,8 +55,11 @@ import java.util.Locale;
  */
 public class cameraFragment extends Fragment {
 
-    int PICK_IMAGE_MULTIPLE = 1;
+    int PICK_IMAGE_MULTIPLE = 2;
     ImageView ivImage;
+    String[] permission={"android.permission.CAMERA"};
+    static final int reqCap=1;
+    Uri imageUri;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -103,7 +117,16 @@ public class cameraFragment extends Fragment {
         ivImage = view.findViewById(R.id.imageTP);
 
         btnScan.setOnClickListener(v -> {
-
+            if(!permission()) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    requestPermissions(permission, reqCap);
+                }
+            }else {
+                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                imageUri = createImage();
+                i.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+                startActivityForResult(i, reqCap);
+            }
         });
 
         btnSelectFromStorage.setOnClickListener(v -> {
@@ -150,6 +173,31 @@ public class cameraFragment extends Fragment {
                 if (type[0].equals("image")) {
                     ivImage.setImageURI(uri);
                     Bitmap image = ((BitmapDrawable) ivImage.getDrawable()).getBitmap();
+
+                    Bitmap scaled;
+                    float ratio = (float)(image.getHeight() / image.getWidth());
+                    if(image.getHeight() > (int) (11f * 72)){
+
+                        scaled = Bitmap.createScaledBitmap(image,
+                                (int) ((11f * 72)/ratio),
+                                (int) (11f * 72),
+                                true);
+                    }
+                    else if(image.getWidth() >= (int) (8.5f * 72)){
+                        Toast.makeText(getActivity(), "xcd", Toast.LENGTH_SHORT).show();
+                        scaled = Bitmap.createScaledBitmap(image,
+                                (int) (8.5f * 72),
+                                (int) ((8.5f * 72) * ratio),
+                                true);
+                    }
+                    else{
+                        scaled = Bitmap.createScaledBitmap(image,
+                                (int) (8.5f * 72),
+                                (int) (11f * 72),
+                                true);
+                    }
+
+
                     String ms = "_".concat(String.valueOf(Calendar.getInstance().getTimeInMillis()));
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
                     String name = ("IMG_".concat(sdf.format(new Date()).concat(ms))).concat(".jpeg");
@@ -158,7 +206,7 @@ public class cameraFragment extends Fragment {
                         //noinspection ResultOfMethodCallIgnored
                         file.createNewFile();
                         OutputStream os = new BufferedOutputStream(new FileOutputStream(file));
-                        image.compress(Bitmap.CompressFormat.JPEG, 100, os);
+                        scaled.compress(Bitmap.CompressFormat.JPEG, 100, os);
                         os.close();
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -167,6 +215,7 @@ public class cameraFragment extends Fragment {
 
                 Intent intent = new Intent(getActivity(), folderList.class);
                 intent.putExtra("path", path);
+                intent.putExtra("btnCreatePdf", 2);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 requireActivity().startActivity(intent);
 
@@ -222,6 +271,7 @@ public class cameraFragment extends Fragment {
 
                 Intent intent = new Intent(getActivity(), folderList.class);
                 intent.putExtra("path", path);
+                intent.putExtra("btnCreatePdf", 2);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 requireActivity().startActivity(intent);
             } else {
@@ -229,6 +279,57 @@ public class cameraFragment extends Fragment {
             }
         }
 
+        if (requestCode == reqCap) {
+            if (resultCode == Activity.RESULT_OK) {
+                Intent i = new Intent(getActivity(), showCapturedImage.class);
+                i.putExtra("UriOfImage", imageUri);
+                requireActivity().startActivity(i);
+            }
+        }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private Uri createImage(){
+        Uri uri;
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.Q) {
+            uri = MediaStore.Images.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY);
+        }
+        else{
+            uri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+        }
+
+//        return uri;
+        String ms = "_".concat(String.valueOf(Calendar.getInstance().getTimeInMillis()));
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
+        String name = ("IMG_".concat(sdf.format(new Date()).concat(ms))).concat(".jpeg");
+        ContentValues contentValues=new ContentValues();
+        contentValues.put(MediaStore.Images.Media.DISPLAY_NAME,name);
+        contentValues.put(MediaStore.Images.Media.RELATIVE_PATH,"Pictures/Document Editor/Scanned Images");
+
+        return resolver.insert(uri, contentValues);
+    }
+
+    public boolean permission() {
+        int cam = ContextCompat.checkSelfPermission(getActivity(), CAMERA);
+
+        return cam == PackageManager.PERMISSION_GRANTED;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(reqCap==1){
+            if(grantResults[0]== PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(getActivity(), "Permission Granted", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                imageUri = createImage();
+                i.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+                startActivityForResult(i, reqCap);
+            }
+            else
+                Toast.makeText(getActivity(),"Permission Denied",Toast.LENGTH_SHORT).show();
+        }
     }
 }

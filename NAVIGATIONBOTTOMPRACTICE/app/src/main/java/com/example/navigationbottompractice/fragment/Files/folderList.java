@@ -28,19 +28,24 @@ public class folderList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_folder_list);
-
+        int showBtnCreatePdf = getIntent().getIntExtra("btnCreatePdf", 0);
 
         Button btnCreatePdf = findViewById(R.id.btnCreatePdf);
+        btnCreatePdf.setVisibility(View.INVISIBLE);
+        btnCreatePdf.setClickable(false);
+        if(showBtnCreatePdf == 2){
+            btnCreatePdf.setVisibility(View.VISIBLE);
+            btnCreatePdf.setOnClickListener(v -> {
+                JPEG_PDF obj = new JPEG_PDF();
+                try {
+                    obj.createPdf(getApplicationContext());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Toast.makeText(this, "PDF created Successfully", Toast.LENGTH_SHORT).show();
+            });
+        }
 
-        btnCreatePdf.setOnClickListener(v -> {
-            JPEG_PDF obj = new JPEG_PDF();
-            try {
-                obj.createPdf(getApplicationContext());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            Toast.makeText(this, "PDF created Successfully", Toast.LENGTH_SHORT).show();
-        });
         String path = getIntent().getStringExtra("path");
         File root = new File(path);
         FileFilter filterDirectory = file -> !file.isHidden() && (file.getName().endsWith(".pdf") ||
