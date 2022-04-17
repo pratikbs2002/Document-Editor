@@ -23,6 +23,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NAVIGATIONBOTTOMPRACTICE">
         <activity
+            android:name=".qr_scanning"
+            android:exported="false" />
+        <activity
             android:name=".tools.pdf_to_ppt"
             android:exported="false" />
         <activity

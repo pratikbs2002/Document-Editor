@@ -36,6 +36,7 @@
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_pdf_to_word.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_ppt_to_pdf.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_qr_scanner.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_qr_scanning.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_setting.xml" value="0.17894736842105263" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_signature.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_spash_screen.xml" value="0.11302083333333333" />
@@ -53,7 +54,7 @@
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/menu/menu_items.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/PRATIK/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/menu/setting_icon.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_compress_pdf.xml" value="0.264" />
-        <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_folder_list.xml" value="0.2" />
+        <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_folder_list.xml" value="0.1334853090172239" />
         <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_jpg_to_pdf.xml" value="0.25" />
         <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_merge_pdf.xml" value="0.25" />
