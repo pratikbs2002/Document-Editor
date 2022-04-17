@@ -15,7 +15,6 @@ import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -131,11 +130,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void RequiresPermission_Dialog() {
         if(SDK_INT >= Build.VERSION_CODES.R){
-            Intent obj = new Intent();
-            obj.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-            startActivityForResult(obj, 2000);
-        }
-        else{
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, REQUEST_CODE);
         }
     }
