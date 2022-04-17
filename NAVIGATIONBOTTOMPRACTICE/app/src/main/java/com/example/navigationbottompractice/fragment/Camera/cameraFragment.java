@@ -254,6 +254,24 @@ public class cameraFragment extends Fragment {
 
         if (requestCode == reqCap) {
             if (resultCode == Activity.RESULT_OK) {
+                path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/";
+
+                if ((!(new File(path).exists()) ||
+                        (!(new File(path + "/Scanned Images/").exists())) ||
+                        (!(new File(path + "/PDF Files/").exists())))) {
+                    CreateFolder.createFolder(Environment.getExternalStorageDirectory());
+                }
+                String pathOfScannedImages = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/Scanned Images/";
+                File images = new File(pathOfScannedImages);
+                File[] listOfImages = images.listFiles();
+                if (listOfImages != null) {
+                    int i = 0;
+                    while (i < listOfImages.length) {
+                        //noinspection ResultOfMethodCallIgnored
+                        listOfImages[i].delete();
+                        i++;
+                    }
+                }
                 Intent intent = new Intent(getActivity(), folderList.class);
                 intent.putExtra("path", path);
                 intent.putExtra("btnCreatePdf", 2);
