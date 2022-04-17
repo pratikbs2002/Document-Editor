@@ -19,7 +19,7 @@
     android:gravity="center"
     >
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnUploadPdfCompress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="UPLOAD PDF"
@@ -144,7 +144,7 @@
 
     <Button
         android:layout_marginTop="30dp"
-        android:id="@+id/compress"
+        android:id="@+id/btncompress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="COMPRESS PDF"

@@ -254,11 +254,11 @@ public class cameraFragment extends Fragment {
 
         if (requestCode == reqCap) {
             if (resultCode == Activity.RESULT_OK) {
-                path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/";
+                String path1 = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/";
 
-                if ((!(new File(path).exists()) ||
-                        (!(new File(path + "/Scanned Images/").exists())) ||
-                        (!(new File(path + "/PDF Files/").exists())))) {
+                if ((!(new File(path1).exists()) ||
+                        (!(new File(path1 + "/Scanned Images/").exists())) ||
+                        (!(new File(path1 + "/PDF Files/").exists())))) {
                     CreateFolder.createFolder(Environment.getExternalStorageDirectory());
                 }
                 String pathOfScannedImages = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/Scanned Images/";

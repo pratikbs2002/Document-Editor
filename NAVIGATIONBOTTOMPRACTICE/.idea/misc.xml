@@ -56,8 +56,16 @@
         <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_folder_list.xml" value="0.2" />
         <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_merge_pdf.xml" value="0.25" />
+        <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_pdf_to_jpg.xml" value="0.25" />
+        <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_pdf_to_ppt.xml" value="0.25" />
+        <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_pdf_to_word.xml" value="0.25" />
+        <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_ppt_to_pdf.xml" value="0.25" />
         <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_show_captured_image.xml" value="0.25" />
+        <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_signature.xml" value="0.25" />
         <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_spash_screen.xml" value="0.1" />
+        <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_split_pdf.xml" value="0.25" />
+        <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_watermark.xml" value="0.25" />
+        <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/activity_word_to_pdf.xml" value="0.25" />
         <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/filesitems.xml" value="0.1334853090172239" />
         <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/fragment_camerafragment.xml" value="0.1334853090172239" />
         <entry key="..\:/Users/tiwar/Desktop/SGP_2/NAVIGATIONBOTTOMPRACTICE/app/src/main/res/layout/fragment_filesfragment.xml" value="0.1308876811594203" />

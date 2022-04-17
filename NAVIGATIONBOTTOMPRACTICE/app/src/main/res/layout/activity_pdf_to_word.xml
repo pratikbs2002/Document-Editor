@@ -10,7 +10,7 @@
         layout="@layout/home_page_action">
     </include>
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnUploadPdf2WORD"
         android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,5 +20,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="321dp" />
+        tools:layout_editor_absoluteY="321dp"
+        tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

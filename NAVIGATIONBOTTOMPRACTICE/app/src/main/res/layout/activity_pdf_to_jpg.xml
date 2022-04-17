@@ -10,7 +10,7 @@
         layout="@layout/home_page_action">
     </include>
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnUploadPdf2JPG"
         android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
