@@ -22,7 +22,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="321dp" />
+        tools:layout_editor_absoluteY="321dp"
+        tools:ignore="HardcodedText" />
 <androidx.cardview.widget.CardView
     android:layout_marginStart="20dp"
     android:layout_marginEnd="20dp"
@@ -52,7 +53,8 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/button"
-            app:layout_constraintVertical_bias="0.305" />
+            app:layout_constraintVertical_bias="0.305"
+            tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/medium_compress"
@@ -64,7 +66,8 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/low_compress"
-            app:layout_constraintVertical_bias="0.132" />
+            app:layout_constraintVertical_bias="0.132"
+            tools:ignore="HardcodedText" />
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -75,7 +78,8 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/medium_compress"
-            app:layout_constraintVertical_bias="0.132" />
+            app:layout_constraintVertical_bias="0.132"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

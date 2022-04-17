@@ -1,9 +1,6 @@
 package com.example.navigationbottompractice.fragment.Camera;
 
 import static android.Manifest.permission.CAMERA;
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
-import static android.os.Build.VERSION.SDK_INT;
 
 import android.app.Activity;
 import android.content.ClipData;
@@ -24,7 +21,6 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +35,7 @@ import com.example.navigationbottompractice.fragment.Files.folderList;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -306,13 +303,22 @@ public class cameraFragment extends Fragment {
         String name = ("IMG_".concat(sdf.format(new Date()).concat(ms))).concat(".jpeg");
         ContentValues contentValues=new ContentValues();
         contentValues.put(MediaStore.Images.Media.DISPLAY_NAME,name);
-        contentValues.put(MediaStore.Images.Media.RELATIVE_PATH,"Pictures/Document Editor/Scanned Images");
-
-        return resolver.insert(uri, contentValues);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            contentValues.put(MediaStore.Images.Media.RELATIVE_PATH,"Pictures/Document Editor/Scanned Images");
+            return resolver.insert(uri, contentValues);
+        }else{
+            try {
+                Toast.makeText(getActivity(), "In else", Toast.LENGTH_SHORT).show();
+                String imgSaved = MediaStore.Images.Media.insertImage(resolver, Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getPath()+"Document Editor/Scanned Images", name, ".");
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            return uri;
+        }
     }
 
     public boolean permission() {
-        int cam = ContextCompat.checkSelfPermission(getActivity(), CAMERA);
+        int cam = ContextCompat.checkSelfPermission(requireActivity(), CAMERA);
 
         return cam == PackageManager.PERMISSION_GRANTED;
     }

@@ -94,11 +94,6 @@ public class filesFragment extends Fragment {
             String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
             intent.putExtra("path", path);
             startActivity(intent);
-
-//            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-//            Uri uri = Uri.parse(path); // a directory
-//            intent.setDataAndType(uri, "*/*");
-//            startActivity(Intent.createChooser(intent, "Open folder"));
         });
 
         btnAppFolder.setOnClickListener(view1 -> {

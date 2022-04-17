@@ -35,8 +35,8 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    boolean check1 = false, check2 = true;
     int check = 0;
+
     final static int REQUEST_CODE = 333;
     Toolbar toolbar;
     @SuppressLint("NonConstantResourceId")
@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         bottomNavigationView.getMenu().getItem(1).setChecked(true);
-        check = 1;
         transaction.replace(R.id.container,new homefragment()).commit();
 
         toolbar = findViewById(R.id.main_tool_bar);
@@ -60,11 +59,11 @@ public class MainActivity extends AppCompatActivity {
 
             switch (item.getItemId()){
                 case R.id.home:
-                    check = 1;
                     transaction1.replace(R.id.container,new homefragment()).commit();
                     break;
 
                 case R.id.files:
+                    check = 1;
                     String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/";
                     if (!permission()) {
                         RequiresPermission_Dialog();
@@ -81,7 +80,18 @@ public class MainActivity extends AppCompatActivity {
 
                 case R.id.camera:
                     check = 2;
-                    transaction1.replace(R.id.container,new cameraFragment()).commit();
+                    path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/";
+                    if (!permission()) {
+                        RequiresPermission_Dialog();
+                    }
+                    else{
+                        transaction1.replace(R.id.container,new cameraFragment()).commit();
+                    }
+                    if((!(new File(path).exists()) ||
+                            (!(new File(path + "/Scanned Images/").exists()))  ||
+                            (!(new File(path + "/PDF Files/").exists())))){
+                        CreateFolder.createFolder(Environment.getExternalStorageDirectory());
+                    }
                     break;
             }
             return true;
@@ -121,16 +131,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void RequiresPermission_Dialog() {
         if(SDK_INT >= Build.VERSION_CODES.R){
-            try{
-                Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                intent.addCategory("android.intent.category.DEFAULT");
-                intent.setData(Uri.parse(String.format("package:%s", getApplicationContext().getPackageName())));
-                startActivityForResult(intent, 2000);
-            }catch (Exception e){
-                Intent obj = new Intent();
-                obj.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                startActivityForResult(obj, 2000);
-            }
+            Intent obj = new Intent();
+            obj.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+            startActivityForResult(obj, 2000);
         }
         else{
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, REQUEST_CODE);
@@ -149,20 +152,19 @@ public class MainActivity extends AppCompatActivity {
                     //Granted
                     Toast.makeText(MainActivity.this, "Permission is Granted Successfully", Toast.LENGTH_SHORT).show();
                     FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
-                    transaction1.replace(R.id.container, new filesFragment()).commit();
+                    if(check == 1) {
+                        transaction1.replace(R.id.container, new filesFragment()).commit();
+                    }
+                    else{
+                        transaction1.replace(R.id.container, new cameraFragment()).commit();
+                    }
                 } else {
                     //Not Granted
                     Toast.makeText(MainActivity.this, "Permission Is Required To Open Files", Toast.LENGTH_SHORT).show();
                     bottomNavigationView = findViewById(R.id.bottom_nav);
                     FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
-                    if(check == 1){
-                        bottomNavigationView.getMenu().getItem(1).setChecked(true);
-                        transaction1.replace(R.id.container, new homefragment()).commit();
-                    }
-                    else if(check == 2){
-                        bottomNavigationView.getMenu().getItem(2).setChecked(true);
-                        transaction1.replace(R.id.container, new cameraFragment()).commit();
-                    }
+                    bottomNavigationView.getMenu().getItem(1).setChecked(true);
+                    transaction1.replace(R.id.container, new homefragment()).commit();
                 }
             }
         }
@@ -171,34 +173,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(check1 || check2) {
-            if(check2){
-                check2 = false;
-                check1 = true;
-            }
-            else {
-                check2 = true;
-                check1 = false;
-                if (requestCode == 2000) {
-                    if (SDK_INT >= Build.VERSION_CODES.R) {
-                        if (Environment.isExternalStorageManager()) {
-                            Toast.makeText(MainActivity.this, "Permission is Granted Successfully", Toast.LENGTH_SHORT).show();
-                            FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
-                            transaction1.replace(R.id.container, new filesFragment()).commit();
-                        } else {
-                            Toast.makeText(MainActivity.this, "Permission Is Required To Open Files", Toast.LENGTH_SHORT).show();
-                            bottomNavigationView = findViewById(R.id.bottom_nav);
-                            FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
-                            if(check == 1){
-                                bottomNavigationView.getMenu().getItem(1).setChecked(true);
-                                transaction1.replace(R.id.container, new homefragment()).commit();
-                            }
-                            else if(check == 2){
-                                bottomNavigationView.getMenu().getItem(2).setChecked(true);
-                                transaction1.replace(R.id.container, new cameraFragment()).commit();
-                            }
-                        }
+        if (requestCode == 2000) {
+            if (SDK_INT >= Build.VERSION_CODES.R) {
+                if (Environment.isExternalStorageManager()) {
+                    Toast.makeText(MainActivity.this, "Permission is Granted Successfully", Toast.LENGTH_SHORT).show();
+                    FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
+                    if(check == 1) {
+                        transaction1.replace(R.id.container, new filesFragment()).commit();
                     }
+                    else{
+                        transaction1.replace(R.id.container, new cameraFragment()).commit();
+                    }
+                } else {
+                    Toast.makeText(MainActivity.this, "Permission Is Required To Open Files", Toast.LENGTH_SHORT).show();
+                    bottomNavigationView = findViewById(R.id.bottom_nav);
+                    FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
+                    bottomNavigationView.getMenu().getItem(1).setChecked(true);
+                    transaction1.replace(R.id.container, new homefragment()).commit();
                 }
             }
         }

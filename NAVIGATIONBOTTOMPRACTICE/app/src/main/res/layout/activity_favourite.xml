@@ -14,7 +14,7 @@
     <TextView
 
         android:text="Hello I am Favourite"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="@color/teal_700"
         android:textStyle="bold"
         android:layout_width="wrap_content"

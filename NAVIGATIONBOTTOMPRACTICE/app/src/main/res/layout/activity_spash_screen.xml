@@ -17,7 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.336"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logo"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/textView"
@@ -25,7 +26,7 @@
         android:layout_height="wrap_content"
         android:text="DOCUMENT EDITOR"
         android:textColor="@color/personal"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
