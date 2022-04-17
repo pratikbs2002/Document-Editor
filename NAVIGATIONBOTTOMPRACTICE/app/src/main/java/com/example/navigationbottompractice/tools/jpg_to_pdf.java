@@ -10,7 +10,8 @@ import com.example.navigationbottompractice.R;
 import java.util.Objects;
 
 public class jpg_to_pdf extends AppCompatActivity {
-Toolbar toolbar;
+
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

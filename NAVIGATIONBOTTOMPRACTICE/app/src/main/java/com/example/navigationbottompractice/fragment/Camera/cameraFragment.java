@@ -254,24 +254,6 @@ public class cameraFragment extends Fragment {
 
         if (requestCode == reqCap) {
             if (resultCode == Activity.RESULT_OK) {
-                String path1 = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/";
-
-                if ((!(new File(path1).exists()) ||
-                        (!(new File(path1 + "/Scanned Images/").exists())) ||
-                        (!(new File(path1 + "/PDF Files/").exists())))) {
-                    CreateFolder.createFolder(Environment.getExternalStorageDirectory());
-                }
-                String pathOfScannedImages = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/Scanned Images/";
-                File images = new File(pathOfScannedImages);
-                File[] listOfImages = images.listFiles();
-                if (listOfImages != null) {
-                    int i = 0;
-                    while (i < listOfImages.length) {
-                        //noinspection ResultOfMethodCallIgnored
-                        listOfImages[i].delete();
-                        i++;
-                    }
-                }
                 Intent intent = new Intent(getActivity(), folderList.class);
                 intent.putExtra("path", path);
                 intent.putExtra("btnCreatePdf", 2);
@@ -324,6 +306,24 @@ public class cameraFragment extends Fragment {
         if(reqCap==1){
             if(grantResults[0]== PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(getActivity(), "Permission Granted", Toast.LENGTH_SHORT).show();
+                String path1 = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/";
+
+                if ((!(new File(path1).exists()) ||
+                        (!(new File(path1 + "/Scanned Images/").exists())) ||
+                        (!(new File(path1 + "/PDF Files/").exists())))) {
+                    CreateFolder.createFolder(Environment.getExternalStorageDirectory());
+                }
+                String pathOfScannedImages = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Document Editor/Scanned Images/";
+                File images = new File(pathOfScannedImages);
+                File[] listOfImages = images.listFiles();
+                if (listOfImages != null) {
+                    int i = 0;
+                    while (i < listOfImages.length) {
+                        //noinspection ResultOfMethodCallIgnored
+                        listOfImages[i].delete();
+                        i++;
+                    }
+                }
                 Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 imageUri = createImage();
                 i.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
