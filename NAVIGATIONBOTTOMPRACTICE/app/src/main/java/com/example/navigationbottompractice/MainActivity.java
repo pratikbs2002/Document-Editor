@@ -130,6 +130,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void RequiresPermission_Dialog() {
         if(SDK_INT >= Build.VERSION_CODES.R){
+            Intent obj = new Intent();
+            obj.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+            startActivityForResult(obj, 2000);
+        }
+        else{
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, REQUEST_CODE);
         }
     }
