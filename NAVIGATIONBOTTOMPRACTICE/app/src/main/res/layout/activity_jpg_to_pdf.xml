@@ -9,8 +9,16 @@
         android:id="@+id/main_tool_bar1"
         layout="@layout/home_page_action">
     </include>
+
+    <ImageView
+        android:id="@+id/imageTP2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
     <Button
-        android:id="@+id/btnJPG2PDF"
+        android:id="@+id/btnUploadJPG2PDF"
         android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
