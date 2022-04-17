@@ -11,6 +11,13 @@
         layout="@layout/home_page_action">
     </include>
 
+    <ImageView
+        android:id="@+id/imageTP1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        tools:ignore="ContentDescription" />
+
     <TextView
         android:id="@+id/NoFiles"
         android:layout_width="wrap_content"
@@ -31,13 +38,27 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
+
     <Button
         android:id="@+id/btnCreatePdf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="32dp"
-        android:text="Create PDF" />
+        android:text="Create PDF"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnAddMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="32dp"
+        android:text="Add More Images"
+        tools:ignore="HardcodedText" />
 
 </RelativeLayout>

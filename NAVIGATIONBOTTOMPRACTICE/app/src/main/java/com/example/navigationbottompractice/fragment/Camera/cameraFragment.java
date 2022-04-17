@@ -43,6 +43,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 
 /**
@@ -208,6 +209,7 @@ public class cameraFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), folderList.class);
                 intent.putExtra("path", path);
                 intent.putExtra("btnCreatePdf", 2);
+                intent.putExtra("camOrPhone", 2);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 requireActivity().startActivity(intent);
 
@@ -242,6 +244,7 @@ public class cameraFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), folderList.class);
                 intent.putExtra("path", path);
                 intent.putExtra("btnCreatePdf", 2);
+                intent.putExtra("camOrPhone", 2);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 requireActivity().startActivity(intent);
             } else {
@@ -254,6 +257,7 @@ public class cameraFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), folderList.class);
                 intent.putExtra("path", path);
                 intent.putExtra("btnCreatePdf", 2);
+                intent.putExtra("camOrPhone", 1);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 requireActivity().startActivity(intent);
             }
@@ -282,7 +286,6 @@ public class cameraFragment extends Fragment {
             return resolver.insert(uri, contentValues);
         }else{
             try {
-                Toast.makeText(getActivity(), "In else", Toast.LENGTH_SHORT).show();
                 String imgSaved = MediaStore.Images.Media.insertImage(resolver, Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getPath()+"Document Editor/Scanned Images", name, ".");
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
